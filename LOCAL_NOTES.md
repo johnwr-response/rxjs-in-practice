@@ -21,6 +21,11 @@
 - Please use this version of node, which is compatible with the package-lock.json available in the repository. This will avoid any semantic versioning issues, and ensure you a smooth installation and course taking experience.
 
 ### The Typescript Jump start Ebook
+
+- This course will be in the Typescript language
+- If not familiar there is an E-Book aimed at getting you started quickly with the language
+  - [The Typescript Jump start Ebook](Typescript_Jumpstart_Book_Udemy.pdf)
+
 ### Environment Setup - Get the lessons Code Up and Running
 ### Understanding RxJx - What are Streams?
 ### What is RxJs? What Problem Does it Solve?
