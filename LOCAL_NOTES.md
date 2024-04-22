@@ -16,6 +16,10 @@
     - Stores
 
 ### IMPORTANT - Recommended Software Versions
+
+- Please note that this version of the course is optimised for **Node 18**
+- Please use this version of node, which is compatible with the package-lock.json available in the repository. This will avoid any semantic versioning issues, and ensure you a smooth installation and course taking experience.
+
 ### The Typescript Jump start Ebook
 ### Environment Setup - Get the lessons Code Up and Running
 ### Understanding RxJx - What are Streams?
