@@ -71,10 +71,13 @@
 - It is an extension to standard javascript
 - The key notion being the ***Observable***
 
-
-
-
 ### What is an RxJs Observable? A Simple Explanation
+
+- A definition, a declaration of the stream, not an instance of the stream
+- An observable will only become a stream if we subscribe to it
+
+
+
 ### 3 Core RxJs Concepts - Errors, Completion and Subscriptions
 ### Learn How Observables Work Under the Hood. Build Your Own HTTP Observable
 ## Essential RxJs Operators + Reactive Design
