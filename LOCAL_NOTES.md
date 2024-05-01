@@ -40,6 +40,21 @@
   ```
 
 ### Understanding RxJx - What are Streams?
+
+- Maybe the most fundamental notion in RXJS : Stream of Values
+- Everything is asynchronous events
+- Examples
+  - Every click will be a stream of values containing the click event
+    - Log the whole document from a stream of clicks anywhere on the page
+    - Subscribe to the click event and print the event in the console
+  - Java script intervals
+    - Periodically perform a certain task in the runtime
+    - Emits a new value each time
+  - These a re now two independent streams of values
+  - setTimeout is also a special type of stream commonly used by most applications
+    - It emits only one value and then completes
+
+
 ### What is RxJs? What Problem Does it Solve?
 ### What is an RxJs Observable? A Simple Explanation
 ### 3 Core RxJs Concepts - Errors, Completion and Subscriptions
