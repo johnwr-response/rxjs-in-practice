@@ -13,18 +13,19 @@ export class AboutComponent implements OnInit {
 
     document.addEventListener('click', evt => {
       console.log(evt.target);
+
+      setTimeout(()=>{
+        console.log("Finished...")
+
+        let counter = 0
+        setInterval(()=>{
+          console.log(counter)
+          counter++;
+        },1000);
+
+      }, 3000)
+
     })
-
-    let counter = 0
-    setInterval(()=>{
-      console.log(counter)
-      counter++;
-    },1000);
-
-    setTimeout(()=>{
-      console.log("Finished...")
-    }, 3000)
-
   }
 
 }

@@ -30,7 +30,7 @@
 
 - Install Node.js `winget install -e --id OpenJS.NodeJS`
 - Install Git `winget install -e --id Git.Git`
-- Install Weebstorm (using Toolbox) `winget install -e --id JetBrains.Toolbox`
+- Install Webstorm (using Toolbox) `winget install -e --id JetBrains.Toolbox`
 - Course code repository : [The RxJs In Practice Course GitHub](https://github.com/angular-university/rxjs-course)
 - Initialize the project: `npm install npm@latest -g`
 - Start the project:
@@ -54,8 +54,26 @@
   - setTimeout is also a special type of stream commonly used by most applications
     - It emits only one value and then completes
 
-
 ### What is RxJs? What Problem Does it Solve?
+
+- What is RxJs
+- When should we use it
+- Why, what benefits does it give us
+
+- Avoid "Call back hell"
+- We want to combine multiple types of streams caused by
+  - user interactions
+  - backend requests
+  - timeouts
+  - intervals
+- We want to combine all such synchronous events in order to produce a final result 
+- The RxJs (Reactive extensions for Javascript) library is a better way to combine streams of values in a maintainable way
+- It is an extension to standard javascript
+- The key notion being the ***Observable***
+
+
+
+
 ### What is an RxJs Observable? A Simple Explanation
 ### 3 Core RxJs Concepts - Errors, Completion and Subscriptions
 ### Learn How Observables Work Under the Hood. Build Your Own HTTP Observable
