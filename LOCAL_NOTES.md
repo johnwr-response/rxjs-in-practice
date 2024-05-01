@@ -76,9 +76,14 @@
 - A definition, a declaration of the stream, not an instance of the stream
 - An observable will only become a stream if we subscribe to it
 
-
-
 ### 3 Core RxJs Concepts - Errors, Completion and Subscriptions
+
+- The guarantees that are given by the Observable contract which all these streams follows are:
+  - The observable will continue emitting its values until either error or finish event is emitted.
+  - After **either** error or complete is emitted, then it will never emit anything again
+
+- We might want to unsubscribe from the observable
+
 ### Learn How Observables Work Under the Hood. Build Your Own HTTP Observable
 ## Essential RxJs Operators + Reactive Design
 ## RxJs Error Handling
