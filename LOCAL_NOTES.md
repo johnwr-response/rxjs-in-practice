@@ -27,6 +27,18 @@
   - [The Typescript Jump start Ebook](Typescript_Jumpstart_Book_Udemy.pdf)
 
 ### Environment Setup - Get the lessons Code Up and Running
+
+- Install Node.js `winget install -e --id OpenJS.NodeJS`
+- Install Git `winget install -e --id Git.Git`
+- Install Weebstorm (using Toolbox) `winget install -e --id JetBrains.Toolbox`
+- Course code repository : [The RxJs In Practice Course GitHub](https://github.com/angular-university/rxjs-course)
+- Initialize the project: `npm install npm@latest -g`
+- Start the project:
+  ```
+  npm run server
+  npm start
+  ```
+
 ### Understanding RxJx - What are Streams?
 ### What is RxJs? What Problem Does it Solve?
 ### What is an RxJs Observable? A Simple Explanation
