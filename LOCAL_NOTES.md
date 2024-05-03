@@ -85,10 +85,100 @@
 - We might want to unsubscribe from the observable
 
 ### Learn How Observables Work Under the Hood. Build Your Own HTTP Observable
+- Make a call to the backend
+- Fetch a list of courses to the Courses page
+- Give insight into how Observables work and introduce all the RxJs operators we will be using later
+- The sample data comes from our [REST API backend](http://localhost:9000/api/courses) already running on port 9000 
+- Its payload is a json array containing a list of json objects of sample courses
+- You probably want a JSON View plugin in your browser to prettify viewing JSON data like JSON Formatter, JSON Vue or others
+- To make the call to the backend we will be using the browser fetch('url') api directly
+  - This will give back a Promise that is very different from an Observable
+    - A Promise will immediately be executed once we define it, unlike an Observable that will only be triggered in response to a subscription
+  - We will create a custom Observable to represent this http call to the backend and turn it into an RxJs stream
+    - We need to pass a function that implements the behaviour of our Observable to the new method; the network fetch
+    - The observer will allow us to emit new values, error out or complete the observable
+    - The observable does not allow to emit values on its behalf, we can only subscribe to it and get values from the stream of values
+    - The observer should be kept private to the implementation of the observable and allows us to
+      - emit our value for our stream by calling the next() method
+      - fail our stream by calling the error() method
+      - complete our stream by calling the complete() method
+    - The observer is internally implementing the Observable
+    - The observer function will only be called when we subscribe to our (http) observable
+      - When that happens and only then, we will call the fetch
+      - If the request is successful we will apply the .then because this is a Promise, and we will receive the response
+        - This response has amongst other things a body, an ok flag to tell us if a fatal error occurred, a status code
+        - The response also have a json method that returns a Promise containing the response payload, which we will return to evaluate further down this promise chain
+        - This means that if we call another .then later, we will get the json body of the response and not the response object itself
+        - This is what we are going to emit it as the value emitted by our observable by calling the .next method
+      - After emitting the value we are going to complete the observable because nothing else is going to be returning from the backend. Thus, we have terminated our http stream
+      - We will also cover when a fatal error occurs, like a network error for instance, by also calling the .catch method
+        - It immediately returns an equivalent Promise object, allowing to similarly chain calls to other promise methods.
+        - We pass that error to our observer catch callback and are respecting the observable contract by either completing or failing the observable
+    - Note that when creating our own observables, it is up to us to make sure we respect the observable contract
+ - Now we have a complete implementation of our http observable
+ - Without subscribing to it however it will not get executed. We have only created the definition of the stream. In order to do create a concrete instance of that stream that we need to subscribe to it
+   - Here we will be getting a list of courses that we print to the console
+     - We will provide an error handling callback, empty at present and left for later to handle
+       - To make the code more readable we will pass the RxJs `noop` function (no operation) instead of an empty callback `() => {}`
+     - We will also provide a completion handling callback to confirm our stream is completed
+- It is essential to follow the observable contract when creating your custom observable 
+- The advantage of going to the trouble of transforming the Promise to an Observable is to be able to make use of any and all the RxJs operators to easily combine our stream of values with other streams of values
+
+- Notes:
+  - The `Observable.create()` is deprecated use the `new Observable()` pattern instead
+  - If the compiler complains about the `allowSyntheticDefaultImports` flag, simply set it in `tsconfig.json`
+
+
+
+
+
+
+
+
+
+
 ## Essential RxJs Operators + Reactive Design
+### What are RxJs Operators? Learn the Map Operator
+### Building Components with RxJs - Imperative Design
+### Building Components with RxJs - Reactive Design
+### Sharing HTTP Responses with the shareReplay Operator
+### RxJs Higher-Order Mapping Operators PDF
+### Observable Concatenation - In-Depth Explanation
+### Form Draft Pre-Save Example and the RxJs Filter Operator
+### The RxJs concatMap Operator - In-Depth Explanation and Practical Example
+### Understanding the merge Observable combination Strategy
+### The RxJs mergeMap Operator - In-Depth Explanation
+### The RxJs exhaustMap Operator - In-Depth Explanation
+### Unsubscription In Detail - Implementing a Cancellable HTTP Observable
+### Setting Up the Course Component
+### Building a Search Typeahead - debounceTime and distinctUntilChanged Operators
+### Finishing the Search Typeahead - The switchMap Operator
+
 ## RxJs Error Handling
+### RxJs Error Handling - PDF Guide
+### RxJs Error Handling - The Catch and Replace Error Handling Strategy
+### The Catch and Rethrow RxJs Error Handling Strategy and the finalize Operator
+### The Retry RxJs Error Handling Strategy.screenflow
+### The startWith RxJs Operator - Simplifying the Course Component
+### RxJs Throttling vs Debouncing - Understand the Differences
+
 ## Building a RxJs Custom Operator
+### Implementing a Custom RxJs Operator - the Debug Operator
+### The RxJs Debug Operator - Implementation Conclusion
+### The RxJs forkJoin Operator - In-Depth Explanation and Practical Example
+
 ## RxJs Subjects and the Store Pattern
+### Subjects and Stores - New Section Kickoff
+### What are RxJs Subjects? A Simple Explanation
+### BehaviorSubject In Detail - When to Use it and Why?
+### AsyncSubject and ReplaySubject - Learn the Differences
+### Store Service Design - What Subject to Use?
+### The Store Pattern - Loading Initial Data, Selector Methods, Consuming Data
+### BehaviorSubject Store - Example of a Data Modification Operation
+### Refactoring the Course Component for Using the Store
+### Forcing the Completion of Long Running Observables - First and Take Operators
+### The withLatestFrom RxJs Operator - Detailed Explanation
+
 ## Conclusion
 ### Bonus Lecture
 ### RxJs In Practice Course Conclusion and Key Takeaways
