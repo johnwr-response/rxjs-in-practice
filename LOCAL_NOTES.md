@@ -141,13 +141,22 @@
   - The `pipe()` function is what allows to chain multiple operators
   - The `map()` operator take a function as the single argument with the values getting emitted earlier in the chain. The output will be the transformed values, in this case an array of courses
 
-
-
-
-
-
-
 ### Building Components with RxJs - Imperative Design
+- How to use RxJs observables to build components using a reactive design
+- We will have two sets of courses that are derived from the same observable
+- First we will switch our observable to the Home component
+- We will create arrays for both types of courses that will be used in the html
+- How to populate these variables
+  - One way is to do it directly in the success callback of the subscribe method
+- The problem is this will not scale very well in complexity. We will very quickly end up with nested subscribe blocks
+- Note: Replace `courses` with `(courses:Array<Course>)` in the part of subscribe to get this code typesafe
+- Spoiler alert, this is an RxJs Anti-Pattern
+
+
+
+
+
+
 ### Building Components with RxJs - Reactive Design
 ### Sharing HTTP Responses with the shareReplay Operator
 ### RxJs Higher-Order Mapping Operators PDF
