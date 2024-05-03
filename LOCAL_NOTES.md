@@ -173,14 +173,18 @@
   - It can be used to introduce a variable at the level of the component or to issue a logging statement
 - Note: Replace `.shareReplay()` with `.shareReplay<Course[]>()` to get this code typesafe
 
-
-
-
-
-
-
-
 ### RxJs Higher-Order Mapping Operators PDF
+- In this next few lessons, we are going cover in detail the RxJs Higher-Order Mapping Operators: concatMap, mergeMap, exhaustMap and mergeMap.
+- This [PDF guide](rxjs-higher-order-mapping.pdf) (37 pages) covers the same topics as the videos lessons, but it's searchable for later reference
+
+
+
+
+
+
+
+
+
 ### Observable Concatenation - In-Depth Explanation
 ### Form Draft Pre-Save Example and the RxJs Filter Operator
 ### The RxJs concatMap Operator - In-Depth Explanation and Practical Example
