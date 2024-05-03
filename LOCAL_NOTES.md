@@ -165,14 +165,21 @@
 - This is the reactive version, we don't use the subscribe method, instead we simply define the streams of values 
 - It will however make the call to the backend twice which can be avoided with the `.shareReplay()` operator next
 
-
-
-
-
-
-
-
 ### Sharing HTTP Responses with the shareReplay Operator
+
+- The `.shareReplay()` operator solves the problem of calling the backend once for each subscription
+- It will share the replay of the stream of values to each subscriber
+- We will also introduce the `.tap()` operator that is used to produce side effects in our observables chain
+  - It can be used to introduce a variable at the level of the component or to issue a logging statement
+- Note: Replace `.shareReplay()` with `.shareReplay<Course[]>()` to get this code typesafe
+
+
+
+
+
+
+
+
 ### RxJs Higher-Order Mapping Operators PDF
 ### Observable Concatenation - In-Depth Explanation
 ### Form Draft Pre-Save Example and the RxJs Filter Operator
