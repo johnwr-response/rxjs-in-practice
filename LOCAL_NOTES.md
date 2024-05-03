@@ -128,17 +128,25 @@
   - The `Observable.create()` is deprecated use the `new Observable()` pattern instead
   - If the compiler complains about the `allowSyntheticDefaultImports` flag, simply set it in `tsconfig.json`
 
-
-
-
-
-
-
-
-
-
 ## Essential RxJs Operators + Reactive Design
+
 ### What are RxJs Operators? Learn the Map Operator
+- The map() operator will be used to transform the incoming data from the observable into a list of courses
+- `courses` will be another Observable that emits an array of courses
+- The map operator will take a function and output another observable
+- An operator is essentially a wat to take one Observable and make another
+
+- First we extract the old observable into a separate function and place it in a util file to be used by multiple components
+- Whenever we want to derive new observables from existing observables, we need to use one of the RxJs operators by calling the `pipe()` function
+  - The `pipe()` function is what allows to chain multiple operators
+  - The `map()` operator take a function as the single argument with the values getting emitted earlier in the chain. The output will be the transformed values, in this case an array of courses
+
+
+
+
+
+
+
 ### Building Components with RxJs - Imperative Design
 ### Building Components with RxJs - Reactive Design
 ### Sharing HTTP Responses with the shareReplay Operator
