@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {Course} from "../model/course";
-import {noop} from 'rxjs';
+import {Observable} from 'rxjs';
 import {map} from 'rxjs/operators';
 import {createHttpObservable} from "../common/util";
 
@@ -12,30 +12,24 @@ import {createHttpObservable} from "../common/util";
 })
 export class HomeComponent implements OnInit {
 
-    beginnersCourses: Course[];
+    beginnersCourses$: Observable<Course[]>;
 
-    advancedCourses: Course[];
+    advancedCourses$: Observable<Course[]>;
 
     ngOnInit() {
 
       const http$ = createHttpObservable("/api/courses")
 
-      const courses$ = http$
+      const courses$: Observable<Course[]> = http$
         .pipe(
           map(res => Object.values(res["payload"])),
         );
 
-      courses$.subscribe(
-        (courses:Array<Course>) => {
-
-          // Note: this is not a filter operator, just a plain filtering operation
-          // Note: also this must is not type safe and need to get ignored
-          this.beginnersCourses = courses.filter(course => course.category == 'BEGINNER');
-          this.advancedCourses = courses.filter(course => course.category == 'ADVANCED');
-          console.log(courses)
-        },
-        noop,
-        () => console.log('completed')
+      this.beginnersCourses$ = courses$.pipe(
+        map(courses => courses.filter(course => course.category == 'BEGINNER'))
+      );
+      this.advancedCourses$ = courses$.pipe(
+        map(courses => courses.filter(course => course.category == 'ADVANCED'))
       );
 
 

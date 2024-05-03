@@ -152,12 +152,26 @@
 - Note: Replace `courses` with `(courses:Array<Course>)` in the part of subscribe to get this code typesafe
 - Spoiler alert, this is an RxJs Anti-Pattern
 
-
-
-
-
-
 ### Building Components with RxJs - Reactive Design
+- We will define the variables as observables instead of Arrays of Courses directly
+- Assign a new observable that is derived from the http observable using `.pipe`
+- Now we can use the observables directly in our template by extracting the values there
+- We could manually assign it and subscribe to it there, but in Angular we can use the convenient `async` pipe
+  - The `async` pipe in Angular will subscribe to the observable and assign the data for us. It will also unsubscribe when the component gets destroyed
+  - The means we don't need to manually subscribe to the observable ourselves
+- Our data will have gone through both mapping operations
+  - The first to transform the data to an array of courses
+  - The second to filter the courses and that will be done for both final lists 
+- This is the reactive version, we don't use the subscribe method, instead we simply define the streams of values 
+- It will however make the call to the backend twice which can be avoided with the `.shareReplay()` operator next
+
+
+
+
+
+
+
+
 ### Sharing HTTP Responses with the shareReplay Operator
 ### RxJs Higher-Order Mapping Operators PDF
 ### Observable Concatenation - In-Depth Explanation
