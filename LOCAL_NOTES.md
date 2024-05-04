@@ -177,15 +177,22 @@
 - In this next few lessons, we are going cover in detail the RxJs Higher-Order Mapping Operators: concatMap, mergeMap, exhaustMap and mergeMap.
 - This [PDF guide](rxjs-higher-order-mapping.pdf) (37 pages) covers the same topics as the videos lessons, but it's searchable for later reference
 
-
-
-
-
-
-
-
-
 ### Observable Concatenation - In-Depth Explanation
+- Introducing the `of()` function, useful for defining all sorts of observables
+- Sequential concatenation of all values in all streams. Concatenates multiple Observables together by sequentially emitting their values, one Observable after the other 
+- As a side note we can pass a reference to console.log directly. This is in the end also a function that takes one argument as an argument and logs it to the screen.
+- So the subscribe method we can also pass references to functions defined elsewhere in our code 
+- Remember that the next stream of values concatenated will not be called until the previous stream is closed, thus if it is never completed the following streams will never get called 
+
+
+
+
+
+
+
+
+
+
 ### Form Draft Pre-Save Example and the RxJs Filter Operator
 ### The RxJs concatMap Operator - In-Depth Explanation and Practical Example
 ### Understanding the merge Observable combination Strategy
