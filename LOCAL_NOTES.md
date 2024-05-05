@@ -283,12 +283,15 @@
 - Initialize a stream of values with some initial values using the [`startWith()`](https://rxjs.dev/api/operators/startWith) operator
 - Instead of using concat we are going to assign the output of our typeahead logic in the lessons observable
 
-
-
-
-
-
 ### RxJs Throttling vs Debouncing - Understand the Differences
+
+- Debouncing is waiting for a value to become stable
+- Throttling are limiting the number of values that can be emitted in a given interval
+
+
+
+
+
 
 ## Building a RxJs Custom Operator
 ### Implementing a Custom RxJs Operator - the Debug Operator
