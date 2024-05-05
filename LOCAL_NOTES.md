@@ -200,16 +200,17 @@
   - In addition, this way we have no actual guarantee the last save operation received by the server is the actual last operation we sent
 - We need Observable concatenation logic to know the first save operation is finished before launching the second
 
-
-
-
-
-
-
-
-
-
 ### The RxJs concatMap Operator - In-Depth Explanation and Practical Example
+
+
+
+
+
+
+
+
+
+
 ### Understanding the merge Observable combination Strategy
 ### The RxJs mergeMap Operator - In-Depth Explanation
 ### The RxJs exhaustMap Operator - In-Depth Explanation
