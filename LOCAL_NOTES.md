@@ -269,14 +269,20 @@
 - If we move the catchError operator before the other operators, we will bypass the whole Observable chain and only execute the catchError block once. But we see that finalize is executed twice which is as expected
   - We could also move the finalize block earlier to execute that only once as well if that ois what we want
 
+### The Retry RxJs Error Handling Strategy.screenFlow
+
+- To implement the retry strategy we use the `retryWhen()` operator
+  - It receives an errors observable that will emit an error each time we are retrying and throws an error
+  - `retryWhen()` will create and subscribe a new stream for each time it tries until it does not error out
+  - The observable will tell to `retryWhen()` when to try again, so we can simply return the errors observable itself to make it try again immediately : `retryWhen(errors => errors)`
+  - In reality, we would want to have a delay by building a [`delayWhen()`](https://rxjs.dev/api/operators/delayWhen) operator with a `.timer()` operator into the observable
+    - Note the deprecation warning of using delayWhen() with an empty notifier
 
 
 
 
 
 
-
-### The Retry RxJs Error Handling Strategy.screenflow
 ### The startWith RxJs Operator - Simplifying the Course Component
 ### RxJs Throttling vs Debouncing - Understand the Differences
 
