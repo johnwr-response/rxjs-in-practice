@@ -220,14 +220,19 @@
 - The exhaustMap Operator maps each value to an Observable, then flattens all of these inner Observables using exhaust. Ignoring values arriving while executing a previous one
 - This is exactly what we want when ignoring multiple click events 
 
-
-
-
-
-
-
-
 ### Unsubscription In Detail - Implementing a Cancellable HTTP Observable
+
+- We use an `Abort Controller` that provides an `AbortSignal`
+- This is then called as part of the return of the fetch function. This is the actual cancellation and will be called by the actual application when unsubscribing
+
+
+
+
+
+
+
+
+
 ### Setting Up the Course Component
 ### Building a Search Typeahead - debounceTime and distinctUntilChanged Operators
 ### Finishing the Search Typeahead - The switchMap Operator
