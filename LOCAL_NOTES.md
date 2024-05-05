@@ -294,14 +294,15 @@
 
 ### The RxJs Debug Operator - Implementation Conclusion
 
-
-
-
-
-
-
-
 ### The RxJs forkJoin Operator - In-Depth Explanation and Practical Example
+
+- Introduce the [`forkJoin()`](https://rxjs.dev/api/index/function/forkJoin) operator making us able to launch several tasks in parallel, wait for those tasks to complete, and then use the combined results together
+
+
+
+
+
+
 
 ## RxJs Subjects and the Store Pattern
 ### Subjects and Stores - New Section Kickoff

@@ -1,8 +1,8 @@
 import {AfterViewInit, Component, ElementRef, OnInit, ViewChild} from '@angular/core';
 import {ActivatedRoute} from "@angular/router";
 import {Course} from "../model/course";
-import {debounceTime, distinctUntilChanged, map, startWith, switchMap,} from 'rxjs/operators';
-import {fromEvent, Observable} from 'rxjs';
+import {debounceTime, distinctUntilChanged, map, startWith, switchMap, tap,} from 'rxjs/operators';
+import {forkJoin, fromEvent, Observable} from 'rxjs';
 import {Lesson} from '../model/lesson';
 import {createHttpObservable} from "../common/util";
 import {debug, RxJsLoggingLevel, setRxJsLoggingLevel} from "../common/debug";
@@ -34,6 +34,20 @@ export class CourseComponent implements OnInit, AfterViewInit {
         this.course$ = createHttpObservable(`api/courses/${this.courseId}`).pipe(
           debug(RxJsLoggingLevel.INFO, "course value ")
         ) as Observable<Course>
+
+      const course2$ = createHttpObservable(`api/courses/${this.courseId}`).pipe(
+        debug(RxJsLoggingLevel.INFO, "course value ")
+      ) as Observable<Course>
+      const lessons2$ = this.loadLessons();
+
+      forkJoin([course2$, lessons2$])
+        .pipe(
+          tap(([course, lessons]) => {
+            console.log('course', course);
+            console.log('lessons', lessons);
+          })
+        )
+        .subscribe();
 
       setRxJsLoggingLevel(RxJsLoggingLevel.DEBUG)
     }
