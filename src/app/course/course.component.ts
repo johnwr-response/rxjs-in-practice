@@ -45,6 +45,7 @@ export class CourseComponent implements OnInit, AfterViewInit {
           .pipe(
             map(event => event.target.value),
             startWith(''),
+//            debug(RxJsLoggingLevel.INFO, "search "),
             debounceTime(400),
             distinctUntilChanged(),
             switchMap(search=>this.loadLessons(search))
