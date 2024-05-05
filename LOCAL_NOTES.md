@@ -259,16 +259,23 @@
 - To implement the first strategy we use the `catchError()` operator
   - Note this Observable does not have to be built using the of() operator, this can potentially be any Observable. It is a replacement Observable that replaces the errored out Observable
 
-
-
-
-
-
-
-
-
-
 ### The Catch and Rethrow RxJs Error Handling Strategy and the finalize Operator
+
+- The fetch API catch error block is only going to be triggered in case of a fatal error. Like as a network failure, a DNS failure and such
+- When other recoverable errors occurs, like a 500 or similar, we will error out our observables too by using the OK flag from the response object and error out the Observable
+- To implement the second strategy, the catch and rethrow strategy, we use the `throwError()` utility method
+- Cleanup Logic can be implemented using the `.finalize()` operator
+  - This function will be invoked in one of two cases, when the observable completes or when it errors out
+- If we move the catchError operator before the other operators, we will bypass the whole Observable chain and only execute the catchError block once. But we see that finalize is executed twice which is as expected
+  - We could also move the finalize block earlier to execute that only once as well if that ois what we want
+
+
+
+
+
+
+
+
 ### The Retry RxJs Error Handling Strategy.screenflow
 ### The startWith RxJs Operator - Simplifying the Course Component
 ### RxJs Throttling vs Debouncing - Understand the Differences
