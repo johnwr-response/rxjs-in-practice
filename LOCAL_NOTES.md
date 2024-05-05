@@ -292,15 +292,15 @@
 
 ### Implementing a Custom RxJs Operator - the Debug Operator
 
-
-
-
-
-
-
-
-
 ### The RxJs Debug Operator - Implementation Conclusion
+
+
+
+
+
+
+
+
 ### The RxJs forkJoin Operator - In-Depth Explanation and Practical Example
 
 ## RxJs Subjects and the Store Pattern
