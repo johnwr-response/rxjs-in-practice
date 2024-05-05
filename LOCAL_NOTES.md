@@ -202,16 +202,19 @@
 
 ### The RxJs concatMap Operator - In-Depth Explanation and Practical Example
 
-
-
-
-
-
-
-
-
-
 ### Understanding the merge Observable combination Strategy
+
+- Here we will use another strategy for combining observables, the `.merge()`
+- Merge is ideal for performing Asynchronous operations in parallel
+- The merged observables are only considered completed when ALL the underlying merged observables are completed 
+- The merged observables will error out immediately if ANY of the underlying merged observables are errored out
+- The merge strategy is ideal for performing long-running operations in parallel
+
+
+
+
+
+
 ### The RxJs mergeMap Operator - In-Depth Explanation
 ### The RxJs exhaustMap Operator - In-Depth Explanation
 ### Unsubscription In Detail - Implementing a Cancellable HTTP Observable
