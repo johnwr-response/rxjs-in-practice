@@ -233,13 +233,17 @@
 - The debounceTime Operator is like delay, but passes only the most recent value from each burst of emissions, based on a defined delay
 - The distinctUntilChanged Operator will remove duplicate values from our stream of values
 
-
-
-
-
-
-
 ### Finishing the Search Typeahead - The switchMap Operator
+
+- The switchMap Operator maps each value to an Observable, then flattens all of these inner Observables using switch. Cancelling execution of old values when a new value arrive, by switching to the new one
+
+
+
+
+
+
+
+
 
 ## RxJs Error Handling
 ### RxJs Error Handling - PDF Guide
