@@ -237,16 +237,20 @@
 
 - The switchMap Operator maps each value to an Observable, then flattens all of these inner Observables using switch. Cancelling execution of old values when a new value arrive, by switching to the new one
 
-
-
-
-
-
-
-
-
 ## RxJs Error Handling
+
 ### RxJs Error Handling - PDF Guide
+
+- In this next few lessons, we are going cover in detail the multiple strategies available for RxJs Error Handling.
+- This [PDF guide](rxjs-error-handling.pdf) (30 pages) covers the same topics as the videos lessons, but it's searchable for later reference
+
+
+
+
+
+
+
+
 ### RxJs Error Handling - The Catch and Replace Error Handling Strategy
 ### The Catch and Rethrow RxJs Error Handling Strategy and the finalize Operator
 ### The Retry RxJs Error Handling Strategy.screenflow
