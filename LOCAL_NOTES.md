@@ -225,15 +225,15 @@
 - We use an `Abort Controller` that provides an `AbortSignal`
 - This is then called as part of the return of the fetch function. This is the actual cancellation and will be called by the actual application when unsubscribing
 
-
-
-
-
-
-
-
-
 ### Setting Up the Course Component
+
+
+
+
+
+
+
+
 ### Building a Search Typeahead - debounceTime and distinctUntilChanged Operators
 ### Finishing the Search Typeahead - The switchMap Operator
 
