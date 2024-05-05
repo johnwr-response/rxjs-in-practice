@@ -210,12 +210,17 @@
 - The merged observables will error out immediately if ANY of the underlying merged observables are errored out
 - The merge strategy is ideal for performing long-running operations in parallel
 
-
-
-
-
-
 ### The RxJs mergeMap Operator - In-Depth Explanation
+
+- The mergeMap Operator Maps each value to an Observable, then flattens all of these inner Observables using mergeAll
+- `mergeMap` makes it work in `parallel` (work asynchronously) , as opposed to the `concatMap` that makes it work in `sequence` (preserving order)
+
+
+
+
+
+
+
 ### The RxJs exhaustMap Operator - In-Depth Explanation
 ### Unsubscription In Detail - Implementing a Cancellable HTTP Observable
 ### Setting Up the Course Component
