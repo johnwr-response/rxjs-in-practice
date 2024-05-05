@@ -244,14 +244,30 @@
 - In this next few lessons, we are going cover in detail the multiple strategies available for RxJs Error Handling.
 - This [PDF guide](rxjs-error-handling.pdf) (30 pages) covers the same topics as the videos lessons, but it's searchable for later reference
 
-
-
-
-
-
-
-
 ### RxJs Error Handling - The Catch and Replace Error Handling Strategy
+
+- How error behave in RxJs
+  - How to catch errors
+  - How to handle errors
+  - How to attempt to recover from errors
+  - How to retry an Observable if something goes wrong
+- Multiple strategies are available
+  - We can catch the error and try to recover by providing alternative values
+  - We can catch the error, log it to the console and then rethrow it to an outer Observable
+  - We can try to retry the operation that failed
+
+- To implement the first strategy we use the `catchError()` operator
+  - Note this Observable does not have to be built using the of() operator, this can potentially be any Observable. It is a replacement Observable that replaces the errored out Observable
+
+
+
+
+
+
+
+
+
+
 ### The Catch and Rethrow RxJs Error Handling Strategy and the finalize Operator
 ### The Retry RxJs Error Handling Strategy.screenflow
 ### The startWith RxJs Operator - Simplifying the Course Component
