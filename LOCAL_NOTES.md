@@ -298,14 +298,25 @@
 
 - Introduce the [`forkJoin()`](https://rxjs.dev/api/index/function/forkJoin) operator making us able to launch several tasks in parallel, wait for those tasks to complete, and then use the combined results together
 
-
-
-
-
-
-
 ## RxJs Subjects and the Store Pattern
+
 ### Subjects and Stores - New Section Kickoff
+
+- NOTE: New base code. All code created up until now in this course is gone!
+
+- This will cover the Store Observable Pattern
+- We will first introduce the notion of RxJs Subject and talk about different types of Subjects
+  - Plain Subjects
+  - Behaviour Subjects
+  - Async Subjects
+  - Replay Subjects
+- We will introduce a few more RxJs Operators that are commonly used with the Store Pattern
+
+
+
+
+
+
 ### What are RxJs Subjects? A Simple Explanation
 ### BehaviorSubject In Detail - When to Use it and Why?
 ### AsyncSubject and ReplaySubject - Learn the Differences

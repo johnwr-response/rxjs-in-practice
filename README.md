@@ -12,6 +12,7 @@ This course repository is updated to Angular v17:
 
 Please use Node 18 (Long Term Support version).
 
+
 # Installing the Angular CLI
 
 With the following command the angular-cli will be installed globally in your machine:
@@ -24,9 +25,9 @@ With the following command the angular-cli will be installed globally in your ma
 We can install the master branch using the following commands:
 
     git clone https://github.com/angular-university/rxjs-course.git
-
+    
 This repository is made of several separate npm modules, that are installable separately. For example, to run the au-input module, we can do the following:
-
+    
     cd rxjs-course
     npm install
 
@@ -56,7 +57,7 @@ The application is visible at port 4200: [http://localhost:4200](http://localhos
 
 
 
-# Important
+# Important 
 
 This repository has multiple branches, have a look at the beginning of each section to see the name of the branch.
 
@@ -64,7 +65,7 @@ At certain points along the course, you will be asked to checkout other remote b
 
     git branch -a
 
-The remote branches have their starting in origin, such as for example 1-navigation-and-containers.
+  The remote branches have their starting in origin, such as for example 1-navigation-and-containers.
 
 We can checkout the remote branch and start tracking it with a local branch that has the same name, by using the following command:
 
