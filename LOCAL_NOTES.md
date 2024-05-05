@@ -278,12 +278,16 @@
   - In reality, we would want to have a delay by building a [`delayWhen()`](https://rxjs.dev/api/operators/delayWhen) operator with a `.timer()` operator into the observable
     - Note the deprecation warning of using delayWhen() with an empty notifier
 
-
-
-
-
-
 ### The startWith RxJs Operator - Simplifying the Course Component
+
+- Initialize a stream of values with some initial values using the [`startWith()`](https://rxjs.dev/api/operators/startWith) operator
+- Instead of using concat we are going to assign the output of our typeahead logic in the lessons observable
+
+
+
+
+
+
 ### RxJs Throttling vs Debouncing - Understand the Differences
 
 ## Building a RxJs Custom Operator
