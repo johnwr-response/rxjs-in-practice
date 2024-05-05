@@ -184,16 +184,31 @@
 - So the subscribe method we can also pass references to functions defined elsewhere in our code 
 - Remember that the next stream of values concatenated will not be called until the previous stream is closed, thus if it is never completed the following streams will never get called 
 
-
-
-
-
-
-
-
-
-
 ### Form Draft Pre-Save Example and the RxJs Filter Operator
+
+- The angular framework provides an observable that emits a stream of the values that are contained in the form: `this.form.valueChanges`
+- This will emit the values when any change of any values in the form occurs (including keyUp events)
+- We can use the RxJs `filter` operator to filter out certain values of the stream 
+- This operator takes a predicate function that must return a boolean
+  - If that value is `true` it means that the value should be included in the output
+  - If that value is `false` it means that the value should be excluded from the output
+  - A common use for this could be the `this.form.valid`
+- Then for the save operation we would like to handle it with Observables
+  - We covert the fetch Promise into an Observable using the `fromPromise()` function
+  - This is of course an Anti-Pattern, as we are nesting our observables and sending a lot of unnecessary requests
+- What we want to do is wait for the operation to complete before issuing a save
+  - In addition, this way we have no actual guarantee the last save operation received by the server is the actual last operation we sent
+- We need Observable concatenation logic to know the first save operation is finished before launching the second
+
+
+
+
+
+
+
+
+
+
 ### The RxJs concatMap Operator - In-Depth Explanation and Practical Example
 ### Understanding the merge Observable combination Strategy
 ### The RxJs mergeMap Operator - In-Depth Explanation

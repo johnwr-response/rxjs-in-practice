@@ -1,10 +1,9 @@
-import {AfterViewInit, Component, ElementRef, Inject, OnInit, ViewChild, ViewEncapsulation} from '@angular/core';
+import {AfterViewInit, Component, ElementRef, Inject, OnInit, ViewChild} from '@angular/core';
 import { MAT_DIALOG_DATA, MatDialogRef } from "@angular/material/dialog";
 import {Course} from "../model/course";
 import {FormBuilder, Validators, FormGroup} from "@angular/forms";
 import * as moment from 'moment';
-import {fromEvent} from 'rxjs';
-import {concatMap, distinctUntilChanged, exhaustMap, filter, mergeMap} from 'rxjs/operators';
+import {filter} from 'rxjs/operators';
 import {fromPromise} from 'rxjs/internal-compatibility';
 
 @Component({
@@ -38,6 +37,21 @@ export class CourseDialogComponent implements OnInit, AfterViewInit {
     }
 
     ngOnInit() {
+
+      this.form.valueChanges
+        .pipe(
+          filter(() => this.form.valid)
+        )
+        .subscribe(changes => {
+          const saveCourse$ = fromPromise(fetch(`/api/courses/${this.course.id}`,{
+            method: 'PUT',
+            body: JSON.stringify(changes),
+            headers: {
+              'content-type': 'application/json'
+            }
+          }))
+          saveCourse$.subscribe()
+        })
 
 
 
