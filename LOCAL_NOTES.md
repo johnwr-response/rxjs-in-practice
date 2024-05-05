@@ -212,16 +212,21 @@
 
 ### The RxJs mergeMap Operator - In-Depth Explanation
 
-- The mergeMap Operator Maps each value to an Observable, then flattens all of these inner Observables using mergeAll
+- The mergeMap Operator maps each value to an Observable, then flattens all of these inner Observables using mergeAll
 - `mergeMap` makes it work in `parallel` (work asynchronously) , as opposed to the `concatMap` that makes it work in `sequence` (preserving order)
 
-
-
-
-
-
-
 ### The RxJs exhaustMap Operator - In-Depth Explanation
+- 
+- The exhaustMap Operator maps each value to an Observable, then flattens all of these inner Observables using exhaust. Ignoring values arriving while executing a previous one
+- This is exactly what we want when ignoring multiple click events 
+
+
+
+
+
+
+
+
 ### Unsubscription In Detail - Implementing a Cancellable HTTP Observable
 ### Setting Up the Course Component
 ### Building a Search Typeahead - debounceTime and distinctUntilChanged Operators
