@@ -227,14 +227,18 @@
 
 ### Setting Up the Course Component
 
-
-
-
-
-
-
-
 ### Building a Search Typeahead - debounceTime and distinctUntilChanged Operators
+
+- This will cover some new operators, namely the `.debounceTime()` and `.distinctUntilChanged()`
+- The debounceTime Operator is like delay, but passes only the most recent value from each burst of emissions, based on a defined delay
+- The distinctUntilChanged Operator will remove duplicate values from our stream of values
+
+
+
+
+
+
+
 ### Finishing the Search Typeahead - The switchMap Operator
 
 ## RxJs Error Handling
