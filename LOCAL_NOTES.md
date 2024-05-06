@@ -393,9 +393,20 @@
 - [FREE Angular For Beginners Course (2.5h)](https://angular-university.io/)
 - [The Angular University YouTube Channel](https://www.youtube.com/channel/UC3cEGKhg3OERn-ihVsJcb7A?view_as=subscriber)
 
-
-
-
-
-
 ### RxJs In Practice Course Conclusion and Key Takeaways
+- RxJs Reactive extensions programming library
+  - Stream of values
+  - An Observable is NOT a stream, it's a definition of a type of stream
+  - We can create a stream from an observable by subscribing to it
+  - Each subscription will generate its own stream of values
+  - How streams and observables are useful when building reactive style programs without facing callback-hell
+  - How NOT to use RxJs
+  - Design our components without using member variables that directly contain the data, instead using  observables of the data
+  - Design streams and plug them into our templates. (In Angular using the `async` pipe so the x+components do not have direct access to the data and can not introduce problems related to that)
+  - Covered a wide variety of, and the most commonly used RxJs Operators
+  - RxJs error handling strategies
+  - Created custom RxJs operator from scratch by designing a very useful debug operator
+  - Subjects
+  - Used Subjects to create our own customized central store solution
+  - Our components are no longer responsible for fetching or storing in memory the data they need, instead using the store
+  - Shown how to make it simple to combine long-running observables with other short-lived ones like the http Observable
