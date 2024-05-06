@@ -312,12 +312,24 @@
   - Replay Subjects
 - We will introduce a few more RxJs Operators that are commonly used with the Store Pattern
 
-
-
-
-
-
 ### What are RxJs Subjects? A Simple Explanation
+
+- It's better to create Observables as much as possible, but if...
+  - some of those methods are not convenient
+  - or if we run into as source of data that is not easily transformable into an Observable
+  - or if we are doing multicasting of one value to multiple separate observable consumers   
+  - then we might want to look into the notion of Subjects
+- A Subject is both an observer and an Observable at the same time
+- A Subject also has the same `.next()`, `.complete()`, `.error()`, `.pipe()` methods as an Observable
+- The Subject is meant to be private to the part of the application that is emitting a given set of data 
+- We have no way of providing unsubscribe logic to an Observable that gets defined from a Subject 
+- We should use Subjects as little as possible and derive our Observables directly from the source instead
+
+
+
+
+
+
 ### BehaviorSubject In Detail - When to Use it and Why?
 ### AsyncSubject and ReplaySubject - Learn the Differences
 ### Store Service Design - What Subject to Use?
