@@ -325,12 +325,22 @@
 - We have no way of providing unsubscribe logic to an Observable that gets defined from a Subject 
 - We should use Subjects as little as possible and derive our Observables directly from the source instead
 
-
-
-
-
-
 ### BehaviorSubject In Detail - When to Use it and Why?
+
+- The default behaviour of the plain Subject is to have no memory, and so we will receive new values after the description only
+- Typically, we would want late subscribers to receive already emitted values, and that our logic works independently of the timing of it's subscriptions
+  - Enter the BehaviorSubject, and because the goal of this is to always pass a value to subscribers we need to provide an initial value
+  - This will emit the last value emitted before the subscription
+  - Late subscribers will not receive values if subscribing to a completed Subject
+  - The BehaviorSubject is the most commonly used Subject
+
+
+
+
+
+
+
+
 ### AsyncSubject and ReplaySubject - Learn the Differences
 ### Store Service Design - What Subject to Use?
 ### The Store Pattern - Loading Initial Data, Selector Methods, Consuming Data
