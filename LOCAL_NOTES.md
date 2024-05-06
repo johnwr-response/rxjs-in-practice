@@ -338,8 +338,8 @@
 
 - The AsyncSubject is ideal for use with long-running calculations
 - The AsyncSubject will wait for Observable completion before emitting values to the multiple subscribers, then the value emitted will be the last value
-
-
+- The ReplaySubject will replay all emitted values for all subscribers
+- Later emitted values will also be relayed to all subscribers
 
 
 
