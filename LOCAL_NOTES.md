@@ -366,9 +366,36 @@
 
 - The RxJs [`.withLatestFrom()`](https://rxjs.dev/api/operators/withLatestFrom) operator emits the latest value of each combined Observable before immediately completing
 
-
-
-
 ## Conclusion
+
 ### Bonus Lecture
+
+- **Updated on May 2024:**  
+  These Bonus coupons have been recently updated. Coupons expire monthly now, so if you happen to click on an expired coupon please send me a direct message or a question here on Udemy and I will send you back a new coupon ASAP.
+- grab a new coupon at any time for these courses:
+  - Qwik for Beginners
+  - Angular Core Deep Dive - Beginner to Advanced (Angular 17)
+  - Reactive Angular Course (with RxJs, Angular 17)
+  - NgRx (with NgRx Data) - The Complete Guide (Angular 17)
+  - Angular Forms In Depth (Angular 17)
+  - Angular Router In Depth (Angular 17)
+  - Angular Testing Masterclass (Angular 17)
+  - Angular Security Masterclass (with FREE E-Book)
+  - Angular SSR In Depth (formerly Angular Universal)
+  - Angular Material In Depth (Angular 17)
+  - Angular Progressive Web Apps (PWA) MasterClass & FREE E-Book
+  - Firebase In Depth
+  - NestJs in Practice (with MongoDB)
+  - Stripe In Practice
+  - Angular Advanced MasterClass & FREE E-Book
+  - Typescript Bootcamp: Beginner To Advanced (2024 Edition)
+- [The Angular University Newsletter](https://angular-university.io/)
+- [FREE Angular For Beginners Course (2.5h)](https://angular-university.io/)
+- [The Angular University YouTube Channel](https://www.youtube.com/channel/UC3cEGKhg3OERn-ihVsJcb7A?view_as=subscriber)
+
+
+
+
+
+
 ### RxJs In Practice Course Conclusion and Key Takeaways
