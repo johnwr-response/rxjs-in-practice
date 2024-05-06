@@ -334,14 +334,17 @@
   - Late subscribers will not receive values if subscribing to a completed Subject
   - The BehaviorSubject is the most commonly used Subject
 
-
-
-
-
-
-
-
 ### AsyncSubject and ReplaySubject - Learn the Differences
+
+- The AsyncSubject is ideal for use with long-running calculations
+- The AsyncSubject will wait for Observable completion before emitting values to the multiple subscribers, then the value emitted will be the last value
+
+
+
+
+
+
+
 ### Store Service Design - What Subject to Use?
 ### The Store Pattern - Loading Initial Data, Selector Methods, Consuming Data
 ### BehaviorSubject Store - Example of a Data Modification Operation
