@@ -354,13 +354,13 @@
 - Notes:
   - If the compiler complains about the `allowSyntheticDefaultImports` flag, simply set it in `tsconfig.json`
 
-
-
-
-
-
-
 ### Refactoring the Course Component for Using the Store
+
+
+
+
+
+
 ### Forcing the Completion of Long Running Observables - First and Take Operators
 ### The withLatestFrom RxJs Operator - Detailed Explanation
 
