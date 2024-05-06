@@ -356,12 +356,16 @@
 
 ### Refactoring the Course Component for Using the Store
 
-
-
-
-
-
 ### Forcing the Completion of Long Running Observables - First and Take Operators
+
+- The RxJs [`.first()`](https://rxjs.dev/api/operators/first) operator emits only the first value that meets some condition before immediately completing
+- The RxJs [`.take()`](https://rxjs.dev/api/operators/take) operator emits the first ${count} values that meets some condition before immediately completing
+- Applying the `.first()` operator is equivalent with applying the `.take(1)` operator
+
+
+
+
+
 ### The withLatestFrom RxJs Operator - Detailed Explanation
 
 ## Conclusion
