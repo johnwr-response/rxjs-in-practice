@@ -5,9 +5,9 @@ import {
   debounceTime,
   distinctUntilChanged,
   map,
-  switchMap, take,
+  switchMap, withLatestFrom,
 } from 'rxjs/operators';
-import {fromEvent, Observable, concat, forkJoin} from 'rxjs';
+import {fromEvent, Observable, concat} from 'rxjs';
 import {Lesson} from '../model/lesson';
 import {createHttpObservable} from '../common/util';
 import {Store} from "../common/store.service";
@@ -24,6 +24,8 @@ export class CourseComponent implements OnInit, AfterViewInit {
 
     course$: Observable<Course>;
 
+    // course : Course;
+
     lessons$: Observable<Lesson[]>;
 
 
@@ -38,12 +40,19 @@ export class CourseComponent implements OnInit, AfterViewInit {
 
         this.courseId = this.route.snapshot.params['id'];
 
-        this.course$ = this.store.selectCourseById(this.courseId).pipe(
-          // first(),
-          take(1),
-        );
+        this.course$ = this.store.selectCourseById(this.courseId);
 
-        forkJoin([this.course$, this.loadLessons()]).subscribe(console.log)
+        // this.course$.subscribe(course => this.course = course);
+
+        this.loadLessons()
+          .pipe(
+            withLatestFrom(this.course$)
+          )
+          .subscribe(([lessons,course]) => {
+            console.log("Lessons", lessons);
+            console.log("course", course);
+
+          });
 
     }
 

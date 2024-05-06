@@ -362,11 +362,12 @@
 - The RxJs [`.take()`](https://rxjs.dev/api/operators/take) operator emits the first ${count} values that meets some condition before immediately completing
 - Applying the `.first()` operator is equivalent with applying the `.take(1)` operator
 
-
-
-
-
 ### The withLatestFrom RxJs Operator - Detailed Explanation
+
+- The RxJs [`.withLatestFrom()`](https://rxjs.dev/api/operators/withLatestFrom) operator emits the latest value of each combined Observable before immediately completing
+
+
+
 
 ## Conclusion
 ### Bonus Lecture
