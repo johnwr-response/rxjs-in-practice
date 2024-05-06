@@ -341,11 +341,19 @@
 - The ReplaySubject will replay all emitted values for all subscribers
 - Later emitted values will also be relayed to all subscribers
 
-
-
-
-
 ### Store Service Design - What Subject to Use?
+
+- The centralized store is a very commonly used design pattern
+  - Currently, every time we navigate to a page we will trigger a new http request
+  - To avoid that we can store the data on the client independently of the component using it
+
+
+
+
+
+
+
+
 ### The Store Pattern - Loading Initial Data, Selector Methods, Consuming Data
 ### BehaviorSubject Store - Example of a Data Modification Operation
 ### Refactoring the Course Component for Using the Store
